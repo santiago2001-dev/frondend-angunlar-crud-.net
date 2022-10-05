@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/clients">CLientes</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ventas">Ventas</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+ <table class="table">
+    <thead>
+      <tr>
+            
+        <th scope="col">ID</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">MARCA </th>
+        <th scope="col"> PRECIO</th>
+        <th scope="col"> UNIDADES EXISTENTES</th>
+        <th scope="col"> UNIDADES VENDIDAS</th>
+
+        <!-- <th th scope="col scope="col"> contraseña </th> -->
+        
+
+<th><button class="btn btn-dark btn-sm" routerLink="/addProduct">NUEVO</button>
+
+        </th>
+
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let Producto of listProduct">
+        
+    
+        <td scope="col">{{Producto.id}}</td>
+        <td scope="row">{{Producto.nombre}}</td>
+        <td scope="row">{{Producto.marca}}</td>
+        <td scope="row">{{Producto.precio}}$</td>
+        <td scope="row">{{Producto.unidadesExistentes}}</td>
+        <td scope="row">{{Producto.unidadesVendidas}}</td>
+        
+        <td>
+          <div class="options">
+            <i  (click)="deleteContact(Producto.id)" class="fa-solid fa-trash"></i>
+            <br>
+            <i [routerLink]="['/updateProduct/',(Producto.id)]" class="fa-solid fa-file-pen"></i>
+
+          
+          </div>
+         
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>

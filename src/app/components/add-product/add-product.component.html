@@ -1,0 +1,54 @@
+<br>
+<div class="container mt-5" id="fondo">
+    <h1 class="title"> {{Titulo}}</h1>
+   
+
+  <br>
+     <form class="form" [formGroup]="productForm" (submit)="addProduct()">
+    <input type="hidden" formControlName = "id">
+
+        <div class="container mb-3">
+
+
+            <input type="text" formControlName="nombre" class="form-control" placeholder="Ingresa el nombre de el producto " required>
+          
+       </div>
+              <div class="container mb-3">
+
+                <input type="text" formControlName="marca" class="form-control" placeholder="ingresa la marca de el producto" required>
+             
+                    </div>
+
+                  
+
+                            <div class="container mb-3">
+
+                                <input type="number" formControlName="precio" class="form-control" placeholder="precio $$" required>
+                             
+                                    </div>
+                                    
+                            <div class="container mb-3">
+
+                                <input type="number" formControlName="unidadesExistentes" class="form-control" placeholder ="ingresa las unidades existentes" required>
+                             
+                                    </div>
+
+                                    <div class="container mb-3">
+
+                                        <input type="number" formControlName="unidadesVendidas" class="form-control" placeholder ="ingresa las unidades vendidas" required>
+                                     
+                                            </div>
+                     
+                
+                  
+                
+               
+             <div class="container mb-3">
+           <button class="btn btn-dark btn-sm"> Enviar</button>
+            <button style="margin-left: 5px;" class="btn btn-dark btn-sm" routerLink="/"> Volver</button>
+
+        </div>
+
+        <br>
+    </form>
+</div>

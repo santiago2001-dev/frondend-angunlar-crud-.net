@@ -1,0 +1,40 @@
+<br>
+<div class="container mt-5" id="fondo">
+    <h1 class="title"> {{Titulo}}</h1>
+   
+
+  <br>
+     <form class="form" [formGroup]="ventaForm" (submit)="addVenta()">
+    <input type="hidden" formControlName = "id">
+
+        <div class="container mb-3">
+
+
+            <input type="number" formControlName="idCliente" class="form-control" placeholder="Ingresa id de el cliente " required>
+          
+       </div>
+              <div class="container mb-3">
+
+                <input type="number" formControlName="idProducto" class="form-control" placeholder="ingresa el id de el producto" required>
+             
+                    </div>
+
+
+                    <div class="container mb-3">
+
+                        <input type="text" formControlName="fecha" class="form-control" placeholder="YYY-MMM-DDD" required>
+                     
+                            </div>
+        
+                  
+
+                    <div class="container mb-3">
+           <button class="btn btn-dark btn-sm"> Enviar</button>
+            <button style="margin-left: 5px;" class="btn btn-dark btn-sm" routerLink="/"> Volver</button>
+
+        </div>
+
+        <br>
+    </form>
+</div>
+

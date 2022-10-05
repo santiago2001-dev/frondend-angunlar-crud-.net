@@ -1,0 +1,49 @@
+<br>
+<div class="container mt-5" id="fondo">
+    <h1 class="title"> {{Titulo}}</h1>
+   
+
+  <br>
+     <form class="form" [formGroup]="clienteForm" (submit)="addClient()">
+    <input type="hidden" formControlName = "id">
+
+        <div class="container mb-3">
+
+
+            <input type="text" formControlName="nombre" class="form-control" placeholder="Ingresa el nombre de el clienta " required>
+          
+       </div>
+              <div class="container mb-3">
+
+                <input type="number" formControlName="edad" class="form-control" placeholder="ingresa la edad de el cliente" required>
+             
+                    </div>
+
+                  
+
+                            <div class="container mb-3">
+
+                                <input type="number" formControlName="documento" class="form-control" placeholder="ingresa el documento de el cliente" required>
+                             
+                                    </div>
+                                    <div class="container mb-3">
+                                        <select  class="form-control"   formControlName="tipoDocumento" >
+                                        <option value="CC">cedula</option>
+                                        <option value="TI">tarjeta de indentidad</option>
+                                        
+                                
+                                    </select> 
+                             </div>
+                
+                  
+                
+               
+             <div class="container mb-3">
+           <button class="btn btn-dark btn-sm"> Enviar</button>
+            <button style="margin-left: 5px;" class="btn btn-dark btn-sm" routerLink="/"> Volver</button>
+
+        </div>
+
+        <br>
+    </form>
+</div>

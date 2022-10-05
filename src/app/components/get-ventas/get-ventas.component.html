@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/clients">CLientes</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Productos</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/ventas">Ventas</a>
+          </li>
+   
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+   <table class="table">
+      <thead>
+        <tr>
+              
+          <th scope="col">ID</th>
+          <th scope="col">ID CLIENTE</th>
+          <th scope="col">ID PRODUCTO</th>
+          <th scope="col"> FECHA</th>
+   
+  
+          <!-- <th th scope="col scope="col"> contraseña </th> -->
+          
+  
+  <th><button class="btn btn-dark btn-sm" routerLink="/addventas">NUEVO</button>
+  
+          </th>
+  
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let venta of listVenta">
+          
+      
+          <td scope="col">{{venta.id}}</td>
+          <td scope="row">{{venta.idCliente}}</td>
+          <td scope="row">{{venta.idProducto}}</td>
+          <td scope="row">{{venta.fecha}}</td>
+        
+          <td>
+            <div class="options">
+              <i  (click)="deteleVenta(venta.id)" class="fa-solid fa-trash"></i>
+              <br>
+              <i [routerLink]="['/updateVentas/',(venta.id)]" class="fa-solid fa-file-pen"></i>
+  
+            
+            </div>
+           
+          </td>
+  
+        </tr>
+  
+      </tbody>
+  
+    </table>
+  
